@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div class="container">
+      <h3>STOCK LIST</h3>
+
+      <div>
+        <%= link_to 'Add Product', new_product_path %>
+      </div>
+      <br>
+      <table border="2">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @products.each do |product| %>
+            <tr>
+              <td><%= product.name %></td>
+              <td><%= product.price %></td>
+              <td><%= truncate(product.short_description, :length => 75) %></td>
+              <div>
+                <td>
+                  <%= link_to 'Show', product_path(product) %>
+                  <%= link_to 'Edit', edit_product_path(product) %>
+                  <%= link_to 'Delete', product_path(product), method: :delete %>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

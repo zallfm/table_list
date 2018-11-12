@@ -1,0 +1,22 @@
+<div class="container">
+  <h3>Add a Product</h3>
+
+  <div>
+    <label>Product Name</label>
+    <%= @product.name %>
+  </div>
+
+  <div>
+    <label>Price</label>
+    <%= @product.price %>
+  </div>
+
+  <div>
+    <label>Description</label>
+    <%= @product.short_description %>
+  </div>
+
+  <div>
+    <%= link_to 'Back', { controller: 'products', action: 'index'} %>
+  </div>
+</div>
